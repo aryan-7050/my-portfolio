@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   SiReact, SiNodedotjs, SiMongodb, 
-  SiTailwindcss, SiJavascript, SiTypescript, SiPython,
-  SiDocker, SiKubernetes, SiGit,
-  SiNextdotjs, SiPostgresql, SiRedux, SiFirebase,
-  SiGraphql, SiJest, SiWebpack, SiFigma,
+  SiTailwindcss, SiJavascript, SiPython,
+  SiDocker, SiGit,
+  SiNextdotjs, SiFirebase,
+  SiWebpack, SiFigma,
   SiC, SiCplusplus, SiHtml5,
 } from 'react-icons/si';
 
@@ -19,18 +19,15 @@ const Skills = () => {
         { name: 'C++', icon: SiCplusplus, color: '#00599C' },
         { name: 'Python', icon: SiPython, color: '#3776AB' },
         { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
-
       ]
     },
     {
       name: 'Frontend',
       skills: [
         { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-  
         { name: 'React', icon: SiReact, color: '#61DAFB' },
         { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
         { name: 'Tailwind', icon: SiTailwindcss, color: '#06B6D4' },
-        
       ]
     },
     {
@@ -47,7 +44,6 @@ const Skills = () => {
       skills: [
         { name: 'Docker', icon: SiDocker, color: '#2496ED' },
         { name: 'Git', icon: SiGit, color: '#F05032' },
-        
       ]
     },
     {
@@ -99,22 +95,18 @@ const Skills = () => {
                     }}
                     viewport={{ once: true }}
                     whileHover={{ y: -4 }}
-                    className="relative"
                   >
-                    {/* Card */}
-                    <div className="relative bg-white dark:bg-gray-900 rounded-lg py-3 px-5 flex items-center justify-center gap-3 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                    <div className="relative bg-white dark:bg-gray-900 rounded-lg py-3 px-5 flex items-center gap-3 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700">
                       
                       <skill.icon
                         size={24}
                         style={{ color: skill.color }}
-                        className="transition-transform duration-300 group-hover:scale-125"
                       />
 
                       <span className="text-sm md:text-base font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
                         {skill.name}
                       </span>
 
-                      {/* Small glow effect on hover */}
                       <div className="absolute inset-0 rounded-lg opacity-0 hover:opacity-15 transition-opacity duration-300"
                            style={{ backgroundColor: skill.color }}></div>
                     </div>
