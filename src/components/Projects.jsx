@@ -40,43 +40,43 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "AI Interview Platform",
+      title: "Cyber Fraud Detection System",
       description:
-        "AI mock interview system with coding editor and performance evaluation.",
+        "AI-powered system to detect and prevent fraudulent activities in real-time.",
       fullDescription:
-        "A comprehensive platform that uses AI to conduct mock technical interviews with real-time coding evaluation and analytics.",
-      tech: ["React", "Node.js", "MongoDB", "OpenAI", "Socket.io"],
-      github: "https://github.com/aryanpatil/ai-interview",
-      live: "https://ai-interview-demo.vercel.app",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+        "A smart cybersecurity platform that uses machine learning algorithms to detect suspicious transactions and prevent fraud in real-time. It analyzes user behavior, transaction patterns, and anomalies to improve security.",
+      tech: ["React", "Node.js", "MongoDB", "Machine Learning", "Express"],
+      github: "https://github.com/aryan-7050/cyber-fraud-detection",
+      live: "https://cyber-fraud-detection.vercel.app",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
       features: [
-        "AI-generated interview questions",
-        "Real-time code editor",
-        "Performance analytics",
-        "Session recording",
+        "Real-time fraud detection",
+        "User behavior analysis",
+        "Anomaly detection system",
+        "Secure transaction monitoring",
       ],
     },
     {
-  title: "Public Bus Transport System",
-  description:
-    "Smart public bus transport system for route search, live bus tracking and online ticket booking.",
-  fullDescription:
-    "A modern public bus transport management system that allows passengers to search bus routes, track buses in real-time, and book tickets online. The system includes seat selection, QR-code based e-tickets, route management and real-time bus tracking for better public transportation experience.",
-  tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
-  github: "https://github.com/aryanpatil/public-bus-transport-system",
-  live: "https://public-bus-transport-demo.vercel.app",
-  image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957",
-  features: [
-    "Live bus tracking system",
-    "Search bus routes and stops",
-    "Online ticket booking",
-    "Seat selection system",
-    "QR code based e-ticket",
-    "Real-time bus location",
-    "Passenger dashboard",
-    "Admin route management"
-  ],
-},
+      title: "Public Bus Transport System",
+      description:
+        "Smart public bus transport system for route search, live bus tracking and online ticket booking.",
+      fullDescription:
+        "A modern public bus transport management system that allows passengers to search bus routes, track buses in real-time, and book tickets online. The system includes seat selection, QR-code based e-tickets, route management and real-time bus tracking for better public transportation experience.",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+      github: "https://github.com/rajpatil005/public-transport-tracking-mern",
+      live: "https://public-bus-transport-demo.vercel.app",
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957",
+      features: [
+        "Live bus tracking system",
+        "Search bus routes and stops",
+        "Online ticket booking",
+        "Seat selection system",
+        "QR code based e-ticket",
+        "Real-time bus location",
+        "Passenger dashboard",
+        "Admin route management"
+      ],
+    },
     {
       title: "Weather Dashboard",
       description: "Real-time weather information and forecasting platform.",
@@ -171,7 +171,7 @@ const Projects = () => {
                     onClick={(e) => e.stopPropagation()}
                     className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
                   >
-                   <FiExternalLink size={18} />
+                    <FiExternalLink size={18} />
                   </a>
                 </div>
               </div>
