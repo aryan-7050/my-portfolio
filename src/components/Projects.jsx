@@ -48,7 +48,7 @@ const Projects = () => {
       tech: ["React", "Node.js", "MongoDB", "Machine Learning", "Express"],
       github: "https://github.com/aryan-7050/cyber-fraud-detection",
       live: "https://cyber-fraud-detection.vercel.app",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
       features: [
         "Real-time fraud detection",
         "User behavior analysis",
