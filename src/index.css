@@ -12,9 +12,38 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-purple-500 to-blue-500 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-purple-600 to-blue-600;
+  }
+  
+  /* Selection color */
+  ::selection {
+    @apply bg-purple-500/30 text-purple-900 dark:text-purple-100;
+  }
 }
 
 @layer components {
+  /* Existing button styles */
   .btn-primary {
     @apply px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 
            transition-all duration-300 font-medium dark:bg-white 
@@ -35,5 +64,274 @@
   .card {
     @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 
            hover:shadow-xl transition-all duration-300;
+  }
+  
+  /* NEW: Glassmorphism Card Effect */
+  .glass-card {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg 
+           border border-white/20 dark:border-gray-700/30 
+           rounded-xl shadow-lg;
+  }
+  
+  /* NEW: Gradient Text Effect */
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 
+           bg-clip-text text-transparent inline-block;
+  }
+  
+  .text-gradient-animated {
+    @apply bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 
+           bg-clip-text text-transparent inline-block;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  /* NEW: Glow Effect on Hover */
+  .glow-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .glow-hover:hover {
+    box-shadow: 0 0 20px theme('colors.purple.500');
+  }
+  
+  /* NEW: Animated Border */
+  .border-gradient {
+    position: relative;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to right, #8B5CF6, #3B82F6, #EC4899) border-box;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+  }
+  
+  .dark .border-gradient {
+    background: linear-gradient(#1F2937, #1F2937) padding-box,
+                linear-gradient(to right, #8B5CF6, #3B82F6, #EC4899) border-box;
+  }
+  
+  /* NEW: Floating Animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* NEW: Pulse Glow */
+  .pulse-glow {
+    @apply relative;
+  }
+  
+  .pulse-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg bg-gradient-to-r 
+           from-purple-500 to-blue-500 opacity-0 blur-xl 
+           transition-opacity duration-300;
+    z-index: -1;
+  }
+  
+  .pulse-glow:hover::before {
+    @apply opacity-50;
+    animation: pulse 2s infinite;
+  }
+  
+  /* NEW: Shimmer Effect */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transform: rotate(30deg);
+    animation: shimmer 3s infinite;
+  }
+  
+  .dark .shimmer::after {
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+  }
+  
+  /* NEW: Hide default cursor when custom cursor is active */
+  @media (min-width: 768px) and (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
+    
+    a, button, [role="button"], input, textarea, select {
+      cursor: none !important;
+    }
+  }
+}
+
+/* Custom Animations */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(107, 114, 128, 0.3);
+  border-radius: 50%;
+  border-top-color: #8B5CF6;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Page Transition Effects */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Responsive Typography Helpers */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* Gradient borders */
+  .border-gradient-purple {
+    border-image: linear-gradient(to right, #8B5CF6, #3B82F6) 1;
+  }
+  
+  /* Backdrop blur utilities */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+  
+  /* Custom animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 3s infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+}
+
+/* Print styles for resume */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* Accessibility - Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .float-animation,
+  .animate-float {
+    animation: none !important;
+  }
+}
+
+/* Focus styles for better accessibility */
+*:focus-visible {
+  @apply outline-none ring-2 ring-purple-500 ring-offset-2 
+         dark:ring-offset-gray-900;
+}
+
+/* Smooth transitions for theme switching */
+.transition-theme {
+  @apply transition-colors duration-300;
+}
+
+/* Container queries for advanced responsiveness */
+@container (min-width: 640px) {
+  .container\:text-left {
+    text-align: left;
   }
 }
