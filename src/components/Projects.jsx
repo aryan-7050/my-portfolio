@@ -14,9 +14,8 @@ import {
   SiOpenai,
   SiSocketdotio,
   SiHtml5,
-  SiExpress,
-  SiCss3,
   SiJavascript,
+  SiExpress,
 } from "react-icons/si";
 
 /* TECH ICON MAP */
@@ -33,7 +32,6 @@ const techIcons = {
   OpenAI: SiOpenai,
   "Socket.io": SiSocketdotio,
   HTML5: SiHtml5,
-  // CSS3: SiCss3,
   JavaScript: SiJavascript,
   Express: SiExpress,
   "Express.js": SiExpress,
@@ -54,13 +52,11 @@ const TiltCard = ({ children, className = "" }) => {
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
     
-    // Calculate rotation based on mouse position relative to center
-    const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 8; // Max 8 degrees
-    const rotateX = ((e.clientY - centerY) / (rect.height / 2)) * -8; // Max 8 degrees
+    const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 8;
+    const rotateX = ((e.clientY - centerY) / (rect.height / 2)) * -8;
     
     setRotate({ x: rotateX, y: rotateY });
 
-    // Calculate glare position (percentage)
     const glareX = ((e.clientX - rect.left) / rect.width) * 100;
     const glareY = ((e.clientY - rect.top) / rect.height) * 100;
     setGlarePosition({ x: glareX, y: glareY });
@@ -98,17 +94,15 @@ const TiltCard = ({ children, className = "" }) => {
       }}
       className={`relative ${className}`}
     >
-      {/* Glare Effect */}
       {isHovered && (
         <div
-          className="absolute inset-0 pointer-events-none z-10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute inset-0 pointer-events-none z-10 rounded-xl"
           style={{
-            background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%)`,
+            background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%)`,
           }}
         />
       )}
       
-      {/* Content with 3D transform */}
       <div
         style={{
           transform: "translateZ(20px)",
@@ -118,10 +112,9 @@ const TiltCard = ({ children, className = "" }) => {
         {children}
       </div>
 
-      {/* Shadow effect */}
       {isHovered && (
         <div
-          className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
+          className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl blur-xl opacity-30 -z-10"
           style={{
             transform: `translateZ(-10px)`,
           }}
@@ -178,11 +171,10 @@ const Projects = () => {
       description: "Real-time weather information and forecasting platform.",
       fullDescription:
         "A comprehensive weather dashboard providing real-time updates and predictive analytics.",
-      tech: ["HTML5", "CSS3", "JavaScript"],
+      tech: ["HTML5", "JavaScript"],
       github: "https://github.com/aryan-7050/Weather-app--js.git",
       live: "https://my-project3-tarz.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800",
+      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800",
       features: [
         "Real-time weather updates",
         "Forecast charts",
@@ -195,7 +187,6 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 px-4 bg-white dark:bg-gray-900">
       <div className="container mx-auto">
-        {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,7 +200,6 @@ const Projects = () => {
           </span>
         </motion.h2>
 
-        {/* PROJECT GRID */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -225,7 +215,6 @@ const Projects = () => {
                   overflow-hidden cursor-pointer group transition h-full flex flex-col"
                   onClick={() => setSelectedProject(project)}
                 >
-                  {/* IMAGE */}
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={project.image}
@@ -235,7 +224,6 @@ const Projects = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
-                  {/* CONTENT */}
                   <div className="p-5 flex-1 flex flex-col">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors">
                       {project.title}
@@ -244,7 +232,6 @@ const Projects = () => {
                       {project.description}
                     </p>
 
-                    {/* TECH ICONS */}
                     <div className="flex gap-3 text-xl mb-4 flex-wrap">
                       {project.tech.map((tech, i) => {
                         const Icon = techIcons[tech];
@@ -258,7 +245,6 @@ const Projects = () => {
                       })}
                     </div>
 
-                    {/* BOTTOM ICONS */}
                     <div className="flex justify-between items-center border-t pt-3">
                       <a
                         href={project.github}
@@ -287,7 +273,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* MODAL */}
         <AnimatePresence>
           {selectedProject && (
             <motion.div
@@ -320,11 +305,9 @@ const Projects = () => {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                      {selectedProject.title}
-                    </h3>
-                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    {selectedProject.title}
+                  </h3>
 
                   <p className="text-gray-600 dark:text-gray-400 mb-6">
                     {selectedProject.fullDescription}
