@@ -153,7 +153,7 @@ const Projects = () => {
         "A modern public bus transport management system that allows passengers to search bus routes, track buses in real-time, and book tickets online. The system includes seat selection, QR-code based e-tickets, route management and real-time bus tracking for better public transportation experience.",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
       github: "https://github.com/rajpatil005/public-transport-tracking-mern",
-      live: "https://public-bus-transport-demo.vercel.app",
+      live: "https://public-transport-tracking-steel.vercel.app",
       image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957",
       features: [
         "Live bus tracking system",
