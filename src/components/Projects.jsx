@@ -129,59 +129,78 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Cyber Fraud Detection System",
-      description:
-        "AI-powered system to detect and prevent fraudulent activities in real-time.",
-      fullDescription:
-        "A smart cybersecurity platform that uses machine learning algorithms to detect suspicious transactions and prevent fraud in real-time. It analyzes user behavior, transaction patterns, and anomalies to improve security.",
-      tech: ["React", "Node.js", "MongoDB", "Machine Learning", "Express"],
-      github: "https://github.com/aryan-7050/cyber-fraud-detection",
-      live: "https://cyber-fraud-detection.vercel.app",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
-      features: [
-        "Real-time fraud detection",
-        "User behavior analysis",
-        "Anomaly detection system",
-        "Secure transaction monitoring",
-      ],
-    },
-    {
-      title: "Public Bus Transport System",
-      description:
-        "Smart public bus transport system for route search, live bus tracking and online ticket booking.",
-      fullDescription:
-        "A modern public bus transport management system that allows passengers to search bus routes, track buses in real-time, and book tickets online. The system includes seat selection, QR-code based e-tickets, route management and real-time bus tracking for better public transportation experience.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
-      github: "https://github.com/rajpatil005/public-transport-tracking-mern",
-      live: "https://public-transport-tracking-steel.vercel.app",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957",
-      features: [
-        "Live bus tracking system",
-        "Search bus routes and stops",
-        "Online ticket booking",
-        "Seat selection system",
-        "QR code based e-ticket",
-        "Real-time bus location",
-        "Passenger dashboard",
-        "Admin route management"
-      ],
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Real-time weather information and forecasting platform.",
-      fullDescription:
-        "A comprehensive weather dashboard providing real-time updates and predictive analytics.",
-      tech: ["HTML5", "JavaScript"],
-      github: "https://github.com/aryan-7050/Weather-app--js.git",
-      live: "https://my-project3-tarz.vercel.app/",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800",
-      features: [
-        "Real-time weather updates",
-        "Forecast charts",
-        "Responsive design",
-        "API integration",
-      ],
-    },
+  title: "Cyber Fraud Detection System",
+  description:
+    "AI-powered system to detect and prevent fraudulent activities in real-time.",
+
+  fullDescription:
+    "A smart cybersecurity platform that uses machine learning algorithms to detect suspicious transactions and prevent fraud in real-time. It analyzes user behavior, transaction patterns, and anomalies to improve security.",
+
+  tech: ["⚛️ React", "🟢 Node.js", "🍃 MongoDB", "🤖 Machine Learning", "🚀 Express"],
+
+  github: "https://github.com/aryan-7050/cyber-fraud-detection",
+  live: "https://cyber-fraud-detection.vercel.app",
+
+  image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800",
+
+  features: [
+    "🛡 Real-time fraud detection",
+    "👤 User behavior analysis",
+    "📊 Anomaly detection system",
+    "🔐 Secure transaction monitoring",
+  ],
+},
+{
+  title: "Public Bus Transport System",
+  description:
+    "Smart public bus transport system for route search, live bus tracking and online ticket booking.",
+
+  fullDescription:
+    "A modern public bus transport management system that allows passengers to search bus routes, track buses in real-time, and book tickets online. The system includes seat selection, QR-code based e-tickets, route management and real-time bus tracking for better public transportation experience.",
+
+  tech: ["⚛️ React.js", "🟢 Node.js", "🚀 Express.js", "🍃 MongoDB"],
+
+  github: "https://github.com/rajpatil005/public-transport-tracking-mern",
+  live: "https://public-transport-tracking-steel.vercel.app",
+
+  image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800",
+
+  features: [
+    "🚌 Live bus tracking system",
+    "🔍 Search routes & stops",
+    "🎫 Online ticket booking",
+    "💺 Seat selection system",
+    "📱 QR code e-ticket",
+    "📍 Real-time location tracking",
+    "👥 Passenger dashboard",
+    "⚙️ Admin route management",
+  ],
+},
+   {
+  title: "Medical Billing App",
+  description: "Full-stack medical store billing system with invoice generation.",
+
+  fullDescription:
+    "A complete MERN stack medical billing application that allows store owners to manage medicines, generate bills, track inventory, and download invoices as PDF. It includes authentication, real-time stock updates, and a responsive dashboard for efficient pharmacy management.",
+
+  tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+
+  github: "https://github.com/aryan-7050/medical-bill-genrator",
+
+  live: "https://medical-bill-bk3m2v3b3-aryannp63-7374s-projects.vercel.app/",
+
+  // ✅ Use a good UI image (or replace with your screenshot)
+image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
+
+  features: [
+    "💊 Add & manage medicines",
+    "🧾 Generate bills with auto calculation",
+    "📄 Download invoice as PDF",
+    "📦 Stock management system",
+    "🔐 User authentication (Admin/User)",
+    "📱 Fully responsive dashboard",
+  ],
+}
   ];
 
   return (
