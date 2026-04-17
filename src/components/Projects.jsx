@@ -136,7 +136,7 @@ const Projects = () => {
   fullDescription:
     "A smart cybersecurity platform that uses machine learning algorithms to detect suspicious transactions and prevent fraud in real-time. It analyzes user behavior, transaction patterns, and anomalies to improve security.",
 
-  tech: ["⚛️ React", "🟢 Node.js", "🍃 MongoDB", "🤖 Machine Learning", "🚀 Express"],
+ tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
 
   github: "https://github.com/aryan-7050/cyber-fraud-detection",
   live: "https://cyber-fraud-detection.vercel.app",
@@ -158,7 +158,7 @@ const Projects = () => {
   fullDescription:
     "A modern public bus transport management system that allows passengers to search bus routes, track buses in real-time, and book tickets online. The system includes seat selection, QR-code based e-tickets, route management and real-time bus tracking for better public transportation experience.",
 
-  tech: ["⚛️ React.js", "🟢 Node.js", "🚀 Express.js", "🍃 MongoDB"],
+ tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
 
   github: "https://github.com/rajpatil005/public-transport-tracking-mern",
   live: "https://public-transport-tracking-steel.vercel.app",
@@ -187,7 +187,7 @@ const Projects = () => {
 
   github: "https://github.com/aryan-7050/medical-bill-genrator",
 
-  live: "https://medical-bill-bk3m2v3b3-aryannp63-7374s-projects.vercel.app/",
+  live: "https://medical-bill-app-peach.vercel.app",
 
   // ✅ Use a good UI image (or replace with your screenshot)
 image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
