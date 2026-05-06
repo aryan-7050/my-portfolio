@@ -139,7 +139,7 @@ const Projects = () => {
  tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
 
   github: "https://github.com/aryan-7050/cyber-fraud-detection",
-  live: "https://cyber-fraud-detection.vercel.app",
+  live: "https://cyber-fraud-detection-3.onrender.com",
 
   image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800",
 
