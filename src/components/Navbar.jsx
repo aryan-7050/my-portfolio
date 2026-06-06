@@ -1,35 +1,56 @@
 import React, { useState, useEffect } from "react";
-import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
+import { FiMenu, FiX, FiSun, FiMoon, FiHome, FiUser, FiBriefcase, FiFolder, FiCode, FiMail } from "react-icons/fi";
 import { useTheme } from "../context/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("Home");
   const { isDarkMode, toggleTheme } = useTheme();
 
-  const navItems = ["Home", "About", "Internship", "Projects", "Skills", "Contact"];
+  const navItems = [
+    { name: "Home", icon: FiHome, href: "home" },
+    { name: "About", icon: FiUser, href: "about" },
+    { name: "Journey", icon: FiBriefcase, href: "journey" },
+    { name: "Projects", icon: FiFolder, href: "projects" },
+    { name: "Skills", icon: FiCode, href: "skills" },
+    { name: "Contact", icon: FiMail, href: "contact" }
+  ];
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      
+      const sections = navItems.map(item => item.href);
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section.charAt(0).toUpperCase() + section.slice(1));
+            break;
+          }
+        }
+      }
+    };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (item) => {
-    const element = document.getElementById(item.toLowerCase());
-
+  const scrollToSection = (item, href) => {
+    const element = document.getElementById(href);
     if (element) {
       const offset = 80;
-      const position =
-        element.getBoundingClientRect().top + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: position,
-        behavior: "smooth",
-      });
-
+      const position = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: position, behavior: "smooth" });
       setIsOpen(false);
+      setActiveSection(item);
     }
   };
 
@@ -44,8 +65,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 
-        dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+        <div 
+          onClick={() => scrollToSection("Home", "home")}
+          className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent cursor-pointer"
+        >
           Aryan Patil
         </div>
 
@@ -68,25 +91,30 @@ const Navbar = () => {
             {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
 
-          {/* Small Dropdown */}
+          {/* Small Dropdown - shows on right side */}
           <AnimatePresence>
             {isOpen && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="absolute right-0 top-12 w-40 bg-white dark:bg-gray-800 
-                rounded-lg shadow-lg overflow-hidden"
+                className="absolute right-0 top-12 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
               >
                 {navItems.map((item) => (
                   <button
-                    key={item}
-                    onClick={() => scrollToSection(item)}
-                    className="block w-full text-left px-4 py-2 text-sm 
-                    text-gray-700 dark:text-gray-300 hover:bg-gray-100 
-                    dark:hover:bg-gray-700"
+                    key={item.name}
+                    onClick={() => scrollToSection(item.name, item.href)}
+                    className={`flex items-center gap-3 w-full text-left px-4 py-3 text-sm transition-all duration-200 ${
+                      activeSection === item.name
+                        ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    }`}
                   >
-                    {item}
+                    <item.icon size={16} />
+                    <span>{item.name}</span>
+                    {activeSection === item.name && (
+                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-600"></div>
+                    )}
                   </button>
                 ))}
               </motion.div>
