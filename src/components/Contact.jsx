@@ -1,11 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { 
-  FiSend, FiMapPin, FiPhone, FiMail, FiCheckCircle, 
-  FiGithub, FiLinkedin, FiTwitter, FiInstagram, 
-  FiUser, FiMessageCircle, FiClock, 
+import {
+  FiSend,
+  FiMapPin,
+  FiPhone,
+  FiMail,
+  FiCheckCircle,
+  FiUser,
+  FiMessageCircle,
+  FiClock,
 } from 'react-icons/fi';
-import { SiLeetcode } from 'react-icons/si';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
