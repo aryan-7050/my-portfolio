@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiMapPin, FiPhone, FiHeart, FiStar } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiMapPin, FiPhone, FiHeart } from 'react-icons/fi';
 import { SiLeetcode } from 'react-icons/si';
 import { useTheme } from '../context/ThemeContext';
 

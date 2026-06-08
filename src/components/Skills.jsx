@@ -19,7 +19,7 @@ import {
   SiExpress,
   SiTypescript,
 } from 'react-icons/si';
-import { FiStar } from 'react-icons/fi';
+import {  } from 'react-icons/fi';
 
 const Skills = () => {
   const [dimensions, setDimensions] = useState({ 

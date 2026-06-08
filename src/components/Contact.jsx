@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { 
   FiSend, FiMapPin, FiPhone, FiMail, FiCheckCircle, 
   FiGithub, FiLinkedin, FiTwitter, FiInstagram, 
-  FiUser, FiMessageCircle, FiClock, FiStar
+  FiUser, FiMessageCircle, FiClock, 
 } from 'react-icons/fi';
 import { SiLeetcode } from 'react-icons/si';
 
@@ -72,13 +72,7 @@ const Contact = () => {
     { icon: FiClock, text: 'Available for work', detail: 'Remote | Full-time | Freelance', link: null, color: '#F59E0B' },
   ];
 
-  const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com/aryan-7050', label: 'GitHub', color: '#333', bg: '#1a1a1a' },
-    { icon: FiLinkedin, href: 'https://linkedin.com/in/aryan-patil-5b9331291', label: 'LinkedIn', color: '#0077b5', bg: '#0a2a3a' },
-    { icon: FiTwitter, href: 'https://twitter.com/aryanpatil', label: 'Twitter', color: '#1DA1F2', bg: '#0a2a3a' },
-    { icon: SiLeetcode, href: 'https://leetcode.com/aryanpatil', label: 'LeetCode', color: '#FFA116', bg: '#2a1a0a' },
-    { icon: FiInstagram, href: 'https://instagram.com/aryanpatil', label: 'Instagram', color: '#E4405F', bg: '#2a0a0a' },
-  ];
+ 
 
   return (
     <section 

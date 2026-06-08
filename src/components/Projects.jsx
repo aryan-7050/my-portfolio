@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink, FiX, FiStar, FiCode, FiServer, FiDatabase, FiCloud } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiX, FiCode} from "react-icons/fi";
 
 import {
   SiReact,
@@ -397,10 +397,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <h4 className="font-semibold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-                    <FiStar size={18} className="text-yellow-500" />
-                    Key Features
-                  </h4>
+                 
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
                     {selectedProject.features.map((f, i) => (
                       <motion.li 
