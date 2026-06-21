@@ -8,7 +8,7 @@ import { SiLeetcode } from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";
 
 import profilePhoto from "../photo.jpg";
-import resumeFile from "../Aryan-Resume.pdf";
+import resumeFile from "../main-resume.pdf";
 
 const Hero = () => {
   return (

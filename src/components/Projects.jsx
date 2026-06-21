@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink, FiX, FiCode} from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiX, FiCode } from "react-icons/fi";
 
 import {
   SiReact,
@@ -53,10 +53,10 @@ const TiltCard = ({ children, className = "" }) => {
     const rect = cardRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 10;
     const rotateX = ((e.clientY - centerY) / (rect.height / 2)) * -10;
-    
+
     setRotate({ x: rotateX, y: rotateY });
 
     const glareX = ((e.clientX - rect.left) / rect.width) * 100;
@@ -98,7 +98,7 @@ const TiltCard = ({ children, className = "" }) => {
           }}
         />
       )}
-      
+
       <div
         style={{
           transform: "translateZ(25px)",
@@ -124,21 +124,66 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
-    {
-      title: "Cyber Fraud Detection System",
-      description: "AI-powered system to detect and prevent fraudulent activities in real-time.",
-      fullDescription: "A smart cybersecurity platform that uses machine learning algorithms to detect suspicious transactions and prevent fraud in real-time. It analyzes user behavior, transaction patterns, and anomalies to improve security.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-      github: "https://github.com/aryan-7050/cyber-fraud-detection",
-      live: "https://cyber-fraud-detection-3.onrender.com",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800",
-      category: "AI & ML",
-      features: [
-        "🛡 Real-time fraud detection",
-        "👤 User behavior analysis",
-        "📊 Anomaly detection system",
-        "🔐 Secure transaction monitoring",
+   
+     {
+      title: "PaisaVedh - Smart Personal Finance Tracker",
+      description: "AI-powered personal finance management platform for tracking expenses, budgets, savings, and financial insights.",
+      fullDescription: "PaisaVedh is a comprehensive personal finance management application that helps users track income and expenses, create budgets, manage savings goals, upload transactions through CSV files, and gain AI-powered financial insights. The platform provides real-time analytics, spending forecasts, and smart recommendations to improve financial planning.",
+      tech: [
+        "React.js",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Redis",
+        "Tailwind CSS",
+        "Chart.js",
+        "JWT Authentication"
       ],
+      github: "https://github.com/aryan-7050/smart-finance-PaisaVedh",
+      live: "https://frontend-two-theta-39.vercel.app",
+      image: "./paisaVedha.jpeg",
+      category: "FinTech",
+      features: [
+        "💰 Income & Expense Tracking",
+        "📊 Interactive Financial Analytics Dashboard",
+        "🎯 Savings Goal Management",
+        "📅 Monthly Budget Planning",
+        "📂 CSV Transaction Import",
+        "📈 Spending Forecast & Predictions",
+        "📑 Automated Financial Reports",
+      ],
+    },
+    {
+      title: "Eventora - Event & Club Management System",
+      description: "A complete platform for managing college events, clubs, registrations, announcements, and member activities.",
+      fullDescription: "Eventora is a full-stack event and club management platform designed to streamline the organization of college events and club activities. It allows students to discover events, register online, receive notifications, and track participation. Club administrators can manage members, create events, monitor registrations, publish announcements, and generate participation reports through a centralized dashboard.",
+      tech: [
+        "React.js",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT Authentication",
+        "Tailwind CSS",
+        "Cloudinary"
+      ],
+      github: "https://github.com/aryan-7050/eventora",
+      live: "https://eventora1.vercel.app",
+      image: "./WhatsApp Image 2026-06-21 at 4.58.40 PM.jpeg",
+      category: "Web Application",
+      features: [
+        "🎉 Event Creation & Management",
+        "👥 Club Member Management",
+        "📝 Online Event Registration",
+        "📢 Announcements & Notifications",
+        "📅 Event Scheduling Calendar",
+        "📊 Registration Analytics Dashboard",
+        "🏆 Participation Tracking",
+        "🔐 Secure JWT Authentication",
+        "📱 Responsive User Interface",
+        "📄 Event Reports & Records"
+      ]
     },
     {
       title: "Public Bus Transport System",
@@ -147,7 +192,7 @@ const Projects = () => {
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
       github: "https://github.com/rajpatil005/public-transport-tracking-mern",
       live: "https://public-transport-tracking-steel.vercel.app",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800",
+      image: "./WhatsApp Image 2026-06-21 at 4.44.56 PM.jpeg",
       category: "Transportation",
       features: [
         "🚌 Live bus tracking system",
@@ -158,29 +203,13 @@ const Projects = () => {
         "📍 Real-time location tracking",
       ],
     },
-    {
-      title: "Medical Billing App",
-      description: "Full-stack medical store billing system with invoice generation.",
-      fullDescription: "A complete MERN stack medical billing application that allows store owners to manage medicines, generate bills, track inventory, and download invoices as PDF. It includes authentication, real-time stock updates, and a responsive dashboard for efficient pharmacy management.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-      github: "https://github.com/aryan-7050/medical-bill-genrator",
-      live: "https://medical-bill-app-peach.vercel.app",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
-      category: "Healthcare",
-      features: [
-        "💊 Add & manage medicines",
-        "🧾 Generate bills with auto calculation",
-        "📄 Download invoice as PDF",
-        "📦 Stock management system",
-        "🔐 User authentication (Admin/User)",
-        "📱 Fully responsive dashboard",
-      ],
-    }
+    
+  
   ];
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-black">
-      
+
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
@@ -194,7 +223,7 @@ const Projects = () => {
           <motion.div
             key={i}
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ 
+            animate={{
               opacity: [0, 0.5, 0],
               scale: [0, 1, 0],
               y: [0, -150, -300],
@@ -212,7 +241,7 @@ const Projects = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -253,12 +282,12 @@ const Projects = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
+
                     {/* Category Badge */}
                     <div className="absolute top-3 left-3 px-3 py-1 bg-purple-600/90 backdrop-blur-sm rounded-full text-white text-xs font-medium">
                       {project.category}
                     </div>
-                    
+
                     {/* View Project Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="px-4 py-2 bg-white/90 dark:bg-gray-800/90 rounded-full text-purple-600 dark:text-purple-400 text-sm font-semibold">
@@ -397,11 +426,11 @@ const Projects = () => {
                     </div>
                   </div>
 
-                 
+
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
                     {selectedProject.features.map((f, i) => (
-                      <motion.li 
-                        key={i} 
+                      <motion.li
+                        key={i}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.05 }}
