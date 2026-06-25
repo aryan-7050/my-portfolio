@@ -169,7 +169,7 @@ const Projects = () => {
         "Cloudinary"
       ],
       github: "https://github.com/aryan-7050/eventora",
-      live: "https://eventora1.vercel.app",
+      live: "https://eventora-beryl-rho.vercel.app/",
       image: "./WhatsApp Image 2026-06-21 at 4.58.40 PM.jpeg",
       category: "Web Application",
       features: [
